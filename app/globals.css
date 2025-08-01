@@ -40,3 +40,39 @@ a {
     color-scheme: dark;
   }
 }
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+a {
+  color: orange;
+}
+
+a:hover {
+  color: purple;
+}
