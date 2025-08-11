@@ -1,12 +1,15 @@
 import AuthForm from "@/components/auth-form";
-import Link from "next/link";
 
-export default function Home() {
+export default async function Home({searchParams}: any) {
+  const params = await searchParams;
+
+  const mode = params.mode || 'login';
+   
   return (
     <>
       {/* <h1>Home</h1>
       <Link href="/about">About Us</Link> */}
-      <AuthForm />
+      <AuthForm mode={mode}/>
     </>
   );
 }

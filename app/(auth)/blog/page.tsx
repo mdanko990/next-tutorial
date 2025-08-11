@@ -1,9 +1,16 @@
 import DataGrid from "@/components/grid/data-grid";
 import Link from "next/link";
-
+import {redirect} from "next/navigation";
 import { getData } from "@/lib/data";
+import { verifyAuth } from "@/lib/auth";
 
 export default async function BlogPage() {
+  const result = await verifyAuth();
+
+  if(!result.user) {
+    return redirect('/')
+  }
+
   const data = await getData();
   return (
     <>

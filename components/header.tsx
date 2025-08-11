@@ -4,10 +4,11 @@ import Image from "next/image";
 import logoImg from "@/assets/logo.svg";
 import classes from "./header.module.css";
 import NavLink from "./navlink";
+import { logout } from "@/actions/auth-actions";
 
 export default function Header() {
     return (
-        <header style={{display: "flex", gap: "4rem", padding: "2rem", alignItems: "center"}}>
+        <header id='auth-header' style={{display: "flex", gap: "4rem", padding: "2rem", alignItems: "center"}}>
             <Link href="/">
             <div className={classes.logo}>
                 <Image 
@@ -28,6 +29,10 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
+
+            <form action={logout}>
+                <button>Logout</button>
+            </form>
         </header>
     );
 }
